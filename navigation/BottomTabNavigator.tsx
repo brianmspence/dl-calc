@@ -69,7 +69,7 @@ function MacroTabNavigator() {
       <MacroTabStack.Screen
         name="MacroScreen"
         component={MacroScreen}
-        options={{ title: "Macros" }}
+        options={({ route }) => ({ title: route.params.folderName })}
       />
       <MacroTabStack.Screen
         name="DetailsScreen"

@@ -97,7 +97,7 @@ const Macros = (props: MacrosProps) => {
           alignItems: "center",
         }}
       >
-        <Ionicons color={iconColor} size={25} name="ios-search" />
+        <Ionicons style={{padding: 10}} color={iconColor} size={25} name="ios-search" />
         <TextInput
           style={{
             flex: 1,

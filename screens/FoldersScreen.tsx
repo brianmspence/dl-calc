@@ -8,8 +8,8 @@ export default function FoldersScreen(
   props: StackScreenProps<MarcoTabParamList, "FoldersScreen">
 ) {
   const navigators = {
-    openFolder: (folderId: string) => {
-      props.navigation.navigate("MacroScreen", { folderId });
+    openFolder: (folderId: string, folderName: string) => {
+      props.navigation.navigate("MacroScreen", { folderId, folderName });
     },
     openAddFolder: () => props.navigation.navigate("AddFolderScreen"),
     openEditFolder: (folderId: string) =>

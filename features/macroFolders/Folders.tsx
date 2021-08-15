@@ -9,7 +9,7 @@ import { Text, useThemeColor, View } from '../../components/Themed'
 import { deleteFolder, globalSelectors as folderSelectors, MacroFolder } from './folderSetup'
 
 interface FoldersProps {
-  openFolder: (folderId: string) => void;
+  openFolder: (folderId: string, folderName: string) => void;
   openAddFolder: () => void;
   openEditFolder: (id: string) => void;
 }
@@ -18,7 +18,7 @@ const Folders = (props: FoldersProps) => {
   const dispatch = useDispatch();
   const folders = useSelector(folderSelectors.selectAll);
   const iconColor = useThemeColor({}, "icon");
-  const onOpen = (id: string) => props.openFolder(id);
+  const onOpen = (id: string, name: string) => props.openFolder(id, name);
 
   const renderItem = (folder: MacroFolder) => (
     <View style={{ paddingRight: 10, paddingLeft: 10 }}>
@@ -30,7 +30,7 @@ const Folders = (props: FoldersProps) => {
           alignItems: "center",
           height: 50,
         }}
-        onPress={() => onOpen(folder.id)}
+        onPress={() => onOpen(folder.id, folder.name)}
       >
         <Ionicons
           style={{ marginRight: 10 }}

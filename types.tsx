@@ -16,7 +16,7 @@ export type CalculatorParamList = {
 };
 
 export type MarcoTabParamList = {
-  MacroScreen: { folderId: string };
+  MacroScreen: { folderId: string, folderName: string };
   DetailsScreen: ResultDetails;
   AddMacroScreen: { folderId: string };
   EditMacroScreen: { macroId: string; folderId: string };
