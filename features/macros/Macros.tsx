@@ -6,7 +6,7 @@ import { RectButton } from 'react-native-gesture-handler'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { ResultDetails } from '../../components/ResultDetails'
-import { TextInput, View } from '../../components/Themed'
+import { TextInput, useThemeColor, View } from '../../components/Themed'
 import { RootState } from '../../redux/rootReducer'
 import { SavedResult } from '../../types'
 import { globalSelectors as folderSelectors } from '../macroFolders/folderSetup'
@@ -26,6 +26,7 @@ interface MacrosProps {
 
 const Macros = (props: MacrosProps) => {
   const dispatch = useDispatch();
+  const iconColor = useThemeColor({}, "icon");
   const [searchString, setSearchString] = useState<string>();
   const folder = useSelector((state: RootState) =>
     folderSelectors.selectById(state, props.folderId)
@@ -96,7 +97,7 @@ const Macros = (props: MacrosProps) => {
           alignItems: "center",
         }}
       >
-        <Ionicons color="white" size={25} name="ios-search" />
+        <Ionicons color={iconColor} size={25} name="ios-search" />
         <TextInput
           style={{
             flex: 1,
@@ -114,7 +115,7 @@ const Macros = (props: MacrosProps) => {
           onPress={() => props.editFolder(props.folderId)}
           underlayColor="white"
         >
-          <Ionicons color="white" size={30} name="ios-options" />
+          <Ionicons color={iconColor} size={30} name="ios-options" />
         </RectButton>
       </View>
       <View style={styles.separator} />
@@ -132,7 +133,7 @@ const Macros = (props: MacrosProps) => {
         onPress={onAdd}
         underlayColor="white"
       >
-        <Ionicons color="white" size={30} name="ios-add-circle-outline" />
+        <Ionicons color={iconColor} size={30} name="ios-add-circle-outline" />
       </RectButton>
     </>
   );

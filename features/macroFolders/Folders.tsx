@@ -5,7 +5,7 @@ import { RectButton } from 'react-native-gesture-handler'
 import { useDispatch, useSelector } from 'react-redux'
 
 import SwipeableList, { IconAction, iconActionRender } from '../../components/SwipeableList'
-import { Text, View } from '../../components/Themed'
+import { Text, useThemeColor, View } from '../../components/Themed'
 import { deleteFolder, globalSelectors as folderSelectors, MacroFolder } from './folderSetup'
 
 interface FoldersProps {
@@ -17,6 +17,7 @@ interface FoldersProps {
 const Folders = (props: FoldersProps) => {
   const dispatch = useDispatch();
   const folders = useSelector(folderSelectors.selectAll);
+  const iconColor = useThemeColor({}, "icon");
   const onOpen = (id: string) => props.openFolder(id);
 
   const renderItem = (folder: MacroFolder) => (
@@ -33,7 +34,7 @@ const Folders = (props: FoldersProps) => {
       >
         <Ionicons
           style={{ marginRight: 10 }}
-          color="white"
+          color={iconColor}
           size={20}
           name="ios-folder"
         />
@@ -70,7 +71,7 @@ const Folders = (props: FoldersProps) => {
         onPress={props.openAddFolder}
         underlayColor="white"
       >
-        <Ionicons color="white" size={30} name="ios-add-circle-outline" />
+        <Ionicons color={iconColor} size={30} name="ios-add-circle-outline" />
       </RectButton>
     </>
   );

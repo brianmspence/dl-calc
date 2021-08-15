@@ -6,7 +6,7 @@ import { RectButton } from 'react-native-gesture-handler'
 import { useDispatch, useSelector } from 'react-redux'
 
 import SwipeableList, { IconAction, iconActionRender } from '../../components/SwipeableList'
-import { Button, Text, TextInput, View } from '../../components/Themed'
+import { Button, Text, TextInput, useThemeColor, View } from '../../components/Themed'
 import { RootState } from '../../redux/rootReducer'
 import { globalSelectors as folderSelectors, MacroFolder } from './folderSetup'
 import { addFolder, editFolder } from './macroFolderSlice'
@@ -23,6 +23,7 @@ export type AddEditFolderProps = {
 const AddEditFolder = (props: AddEditFolderProps) => {
   const dispatch = useDispatch();
   const navigation = useNavigation();
+  const iconColor = useThemeColor({}, "icon");
   let oldFolder: MacroFolder | undefined = undefined;
   if (props.folderId) {
     oldFolder = useSelector<RootState, MacroFolder | undefined>((state) =>
@@ -120,7 +121,7 @@ const AddEditFolder = (props: AddEditFolderProps) => {
               onPress={onAddScope}
               underlayColor="white"
             >
-              <Ionicons color="white" size={30} name="ios-add-circle-outline" />
+              <Ionicons color={iconColor} size={30} name="ios-add-circle-outline" />
             </RectButton>
           </View>
         </View>
