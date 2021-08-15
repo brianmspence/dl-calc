@@ -76,9 +76,10 @@ const AddEditFolder = (props: AddEditFolderProps) => {
 
   const renderItem = (item: ScopeData) => (
     <View style={{ display: "flex", flexDirection: "row", height: 50 }}>
-      <TextInput style={[styles.scopeInput, { flex: 2 }]} value={item.name} />
+      <TextInput editable={false} style={[styles.scopeInput, { flex: 2 }]} value={item.name} />
       <View style={styles.separatorV} />
       <TextInput
+        editable={false}
         style={[styles.scopeInput]}
         keyboardType="number-pad"
         value={item.value.toString()}
@@ -108,7 +109,7 @@ const AddEditFolder = (props: AddEditFolderProps) => {
             onChangeText={setConstantName}
           />
           <View style={styles.separatorV} />
-          <View style={{ flex: 1, display: "flex", flexDirection: "row" }}>
+          <View style={{ paddingHorizontal: 5, flex: 1, display: "flex", flexDirection: "row" }}>
             <TextInput
               placeholder="Value"
               style={styles.scopeInput}
@@ -174,7 +175,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     alignContent: "center",
-    padding: 10,
+    paddingVertical: 10,
     alignSelf: "flex-end",
   },
   separatorV: {
