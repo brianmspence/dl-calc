@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "tabs-test",
-    "slug": "tabs-test",
+    "name": "dl-calc",
+    "slug": "dl-calc",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -23,6 +23,8 @@
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
-    }
+    },
+    "description": "Dice calculator  that will evaluate equations like '1d20 +5'. The app also allows equations to be saved for easy reuse.",
+    "githubUrl": "https://github.com/brianmspence/dl-calc"
   }
 }
