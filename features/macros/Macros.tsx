@@ -32,7 +32,8 @@ const Macros = (props: MacrosProps) => {
     folderSelectors.selectById(state, props.folderId)
   );
   const macroDict = useSelector(macroSelectors.selectEntities);
-  const macroList = folder?.macroIds.map((id) => macroDict[id]!) || [];
+  //Get marcos from ids. The macros should exist but filter the undefined results
+  const macroList = folder?.macroIds.map((id) => macroDict[id]!).filter(m => m) || [];
   const filteredMacroList =
     searchString && searchString.trim().length
       ? macroList.filter((m) =>
