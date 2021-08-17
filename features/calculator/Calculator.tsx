@@ -33,6 +33,7 @@ const Calculator = (props: CalcProps) => {
 
   const onChangeText = (text: string) => {
     setEquation(text);
+    setEqError(false);
   };
   const clearText = () => {
     setEquation("");
