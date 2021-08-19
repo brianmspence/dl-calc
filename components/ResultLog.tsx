@@ -141,7 +141,7 @@ const ResultLogEntry = (props: ResultLogEntryProps) => {
         }}
       >
         <View style={{ backgroundColor: "transparent", flex: 1 }}>
-          <Text style={[styles.text, { flex: 1 }]}>{props.rolledEquation}</Text>
+          <Text numberOfLines={2} style={[styles.text, { flex: 1,  }]}>{props.rolledEquation}</Text>
           <Text
             selectable={true}
             style={[styles.text, { flex: 1, opacity: 0.5, fontSize: 15 }]}
