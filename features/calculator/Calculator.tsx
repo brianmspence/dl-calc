@@ -55,6 +55,11 @@ const Calculator = (props: CalcProps) => {
     }
     let r: Result;
     try {
+      if(eq.match(/[5-9]\d\d+d\d+|[1-9]\d\d\d+d\d+/g)) {
+        setEqError(true)
+        setErrorMessage("Rolling 500 or more dice not supported")
+        return
+      }
       r = diceCalculator.eval(eq);
     } catch (error) {
       setEqError(true);
