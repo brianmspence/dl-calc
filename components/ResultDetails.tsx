@@ -48,15 +48,18 @@ export function ResultDetails(props: ResultDetails) {
   return (
     <View style={{ flex: 1 }}>
       {nameText}
+      <RangeGraph result={result} min={props.min} max={props.max} />
       <View
         style={{
           display: "flex",
           flexDirection: "row",
+          alignItems: "center",
+          flex: 1,
         }}
       >
-        <View>
-          <Text style={{ fontSize: 25 }}>{props.rolledEquation}</Text>
-          <Text selectable={true} style={{ fontSize: 25 }}>
+        <View style={{flex: 1}}>
+          <Text numberOfLines={100} style={{ fontSize: 25 }}>{props.rolledEquation}</Text>
+          <Text selectable={true} style={{ opacity: 0.5, fontSize: 15 }}>
             {equation}
           </Text>
         </View>
@@ -65,7 +68,7 @@ export function ResultDetails(props: ResultDetails) {
           <Text style={{ fontSize: 25 }}>{result}</Text>
         </View>
       </View>
-      <RangeGraph result={result} min={props.min} max={props.max} />
+      
     </View>
   );
 }
