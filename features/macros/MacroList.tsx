@@ -20,7 +20,7 @@ interface MacroListProps {
 const MacroList = (props: MacroListProps) => {
   const rightActions: IconAction<Macro>[] = [
     {
-      iconName: "ios-list-box",
+      iconName: "ios-list",
       color: "#2980B9",
       onPress: (item: Macro) => item.id && props.onLogs(item.id),
     },

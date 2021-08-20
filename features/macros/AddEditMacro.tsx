@@ -41,7 +41,7 @@ const AddEditMacro = (props: AddEditMacroProps) => {
     navigation.goBack();
   };
 
-  const submitIcon = oldMacro ? "ios-done-all" : "ios-add-circle-outline";
+  const submitIcon = oldMacro ? "ios-checkmark-done" : "ios-add-circle-outline";
 
   return (
     <View style={{ width: "100%", height: "100%" }}>

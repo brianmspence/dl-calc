@@ -61,7 +61,7 @@ const AddEditFolder = (props: AddEditFolderProps) => {
     setConstantValue("");
   };
 
-  const submitIcon = oldFolder ? "ios-done-all" : "ios-add-circle-outline";
+  const submitIcon = oldFolder ? "ios-checkmark-done" : "ios-add-circle-outline";
 
   const rightActions: IconAction<ScopeData>[] = [
     {
