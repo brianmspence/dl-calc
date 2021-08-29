@@ -110,7 +110,6 @@ const AddEditFolder = (props: AddEditFolderProps) => {
             <TextInput
               placeholder="Value"
               style={styles.scopeInput}
-              keyboardType="number-pad"
               onChangeText={setConstantValue}
               value={constantValue}
             />
